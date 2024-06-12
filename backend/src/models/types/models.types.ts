@@ -14,8 +14,9 @@ export type Example = {
 export interface Question extends Document{
      name : string;
      content : string;
-     difficulty : difficultyLevel
-     examples ?: Example[]
+     difficulty : difficultyLevel;
+     examples ?: Example[];
+     images ?: string[]
      
 }
 

@@ -22,7 +22,8 @@ export const questionSchema: Schema<Question> = new Schema({
         required : true
     },
     difficulty : difficultyLevel,
-    examples : [exampleSchema]
+    examples : [exampleSchema],
+    images : [String]
 
 } , {timestamps : true});
 
