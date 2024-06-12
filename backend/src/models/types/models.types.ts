@@ -1,5 +1,24 @@
 import { Document } from 'mongoose';
 
+export enum difficultyLevel {
+    Easy,
+    Medium,
+    Hard
+}
+
+export interface Example {
+    input : string;
+    output : string;
+}
+
+export interface Question extends Document{
+     name : string;
+     content : string;
+     difficulty : difficultyLevel
+     examples ?: Example[]
+     
+}
+
 export interface User extends Document{
     userName : string;
     email : string;
@@ -7,8 +26,10 @@ export interface User extends Document{
     avatar ?: string;
     isVerified : boolean;
     verifyCode : string;
-    verifyCodeExpiry : Date;
     githubUrl ?: string;
     twitterUrl ?: string;
+    refreshToken : string;
+    questionsSolved :  Question[];
+    favourites : Question[]
 }
 
