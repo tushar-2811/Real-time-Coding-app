@@ -6,7 +6,7 @@ export enum difficultyLevel {
     Hard
 }
 
-export interface Example {
+export type Example = {
     input : string;
     output : string;
 }
