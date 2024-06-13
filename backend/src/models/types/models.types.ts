@@ -31,11 +31,14 @@ export interface User extends Document{
     twitterUrl ?: string;
     refreshToken : string;
     questionsSolved :  Question[];
-    favourites : Question[]
+    favourites : Question[];
+    walletConfigured : boolean;
+    wallet ?: Wallet;
 }
 
 export interface Wallet extends Document{
     amount : number;
-    owner : User
+    owner : User,
+    passCode : string;
 }
 

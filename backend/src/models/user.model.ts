@@ -1,6 +1,7 @@
 import mongoose , {Schema} from "mongoose";
 import { User } from "./types/models.types";
 import { questionSchema } from "./question.model";
+import { boolean } from "zod";
 
 const userSchema:Schema<User> = new Schema({
     userName : {
@@ -36,6 +37,14 @@ const userSchema:Schema<User> = new Schema({
     },
     questionsSolved :  [questionSchema],
     favourites : [questionSchema],
+    walletConfigured : {
+        type : Boolean,
+        default : false
+    },
+    wallet : {
+        type : Schema.Types.ObjectId,
+        ref : "Wallet"
+    },
     refreshToken : {
         type : String
     }
