@@ -34,3 +34,8 @@ export interface User extends Document{
     favourites : Question[]
 }
 
+export interface Wallet extends Document{
+    amount : number;
+    owner : User
+}
+
