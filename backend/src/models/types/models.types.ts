@@ -33,12 +33,6 @@ export interface User extends Document{
     questionsSolved :  Question[];
     favourites : Question[];
     walletConfigured : boolean;
-    wallet ?: Wallet;
 }
 
-export interface Wallet extends Document{
-    amount : number;
-    owner : User,
-    passCode : string;
-}
 

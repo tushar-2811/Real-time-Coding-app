@@ -41,10 +41,6 @@ const userSchema:Schema<User> = new Schema({
         type : Boolean,
         default : false
     },
-    wallet : {
-        type : Schema.Types.ObjectId,
-        ref : "Wallet"
-    },
     refreshToken : {
         type : String
     }
