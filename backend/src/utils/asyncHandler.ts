@@ -1,6 +1,6 @@
 import { Request , Response , NextFunction } from "express";
 
-const asyncHandler = (requestHandler : any) => {
+const AsyncHandler = (requestHandler : any) => {
     return async (req: Request , res: Response , next: NextFunction) => {
         try {
             await requestHandler(req , res , next);
@@ -13,4 +13,4 @@ const asyncHandler = (requestHandler : any) => {
     }
 }
 
-export {asyncHandler};
+export {AsyncHandler};
