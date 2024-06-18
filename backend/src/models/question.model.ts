@@ -1,5 +1,5 @@
 import mongoose , { Schema} from "mongoose";
-import { Question, difficultyLevel, Example} from "./types/models.types";
+import { Question,Example} from "./types/models.types";
 
 const exampleSchema : Schema<Example> = new Schema({
     input : {
@@ -21,7 +21,11 @@ export const questionSchema: Schema<Question> = new Schema({
         type : String,
         required : true
     },
-    difficulty : difficultyLevel,
+    difficulty : {
+        type : String,
+        enum : ["Easy" , "Medium" , "Hard"],
+        required : true
+    },
     examples : [exampleSchema],
     images : [String]
 

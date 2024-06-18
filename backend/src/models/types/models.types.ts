@@ -1,10 +1,5 @@
 import { Document } from 'mongoose';
 
-export enum difficultyLevel {
-    Easy,
-    Medium,
-    Hard
-}
 
 export type Example = {
     input : string;
@@ -14,7 +9,7 @@ export type Example = {
 export interface Question extends Document{
      name : string;
      content : string;
-     difficulty : difficultyLevel;
+     difficulty : string;
      examples ?: Example[];
      images ?: string[]
      

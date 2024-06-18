@@ -1,14 +1,8 @@
-import dotenv from 'dotenv'
 import app from './app';
+import { env } from './config/envConfig';
 import connectDB from './db/dbConnection';
 
-
-dotenv.config({
-    path : './env'
-})
-
-
-const port = process.env.PORT || 8000;
+const port = env.PORT;
 
 
 connectDB()
@@ -21,3 +15,4 @@ connectDB()
     console.log(`Error while connecting to db : ${error}`);
     throw error;
 })
+

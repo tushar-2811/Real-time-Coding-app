@@ -25,7 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QuestionModel = exports.questionSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const models_types_1 = require("./types/models.types");
 const exampleSchema = new mongoose_1.Schema({
     input: {
         type: String,
@@ -45,7 +44,11 @@ exports.questionSchema = new mongoose_1.Schema({
         type: String,
         required: true
     },
-    difficulty: models_types_1.difficultyLevel,
+    difficulty: {
+        type: String,
+        enum: ["Easy", "Medium", "Hard"],
+        required: true
+    },
     examples: [exampleSchema],
     images: [String]
 }, { timestamps: true });
