@@ -4,7 +4,6 @@ import connectDB from './db/dbConnection';
 
 const port = env.PORT;
 
-
 connectDB()
 .then(() => {
     app.listen(port , () => {

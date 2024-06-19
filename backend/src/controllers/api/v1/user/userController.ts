@@ -1,4 +1,5 @@
 import UserModel from "../../../../models/user.model";
+import { signInSchema } from "../../../../schemas/signInSchema";
 import { signUpSchema } from "../../../../schemas/signUpSchema";
 import { ApiError } from "../../../../utils/ApiError";
 import { AsyncHandler } from "../../../../utils/AsyncHandler";
@@ -34,5 +35,11 @@ export const signUpController = AsyncHandler(async (req: Request , res: Response
 
 // sign-in controller
 export const signInController = AsyncHandler(async (req: Request , res: Response) => {
-       
+       const {email , password} = req.body;
+
+       const parsedInput = signInSchema.safeParse(email , password);
+
+       if(!parsedInput.success){
+          throw new ApiError(400 , "Invalid Credentials" , parsedInput.error)
+       }
 })
