@@ -1,7 +1,7 @@
 import mongoose , {Schema} from "mongoose";
 import { User } from "./types/models.types";
 import { questionSchema } from "./question.model";
-import { boolean } from "zod";
+import bcrypt from 'bcrypt'
 
 const userSchema:Schema<User> = new Schema({
     userName : {
@@ -45,7 +45,19 @@ const userSchema:Schema<User> = new Schema({
         type : String
     }
 
+} , {timestamps : true});
+
+userSchema.pre("save" , async function(next) {
+    if(!this.isModified("password")){
+        return next();
+    }
+    this.password = await bcrypt.hash(this.password , 10);
+    next();
 })
+
+userSchema.methods.isPasswordCorrect = async function(password : string) {
+    return await bcrypt.compare(password , this.password);
+}
 
 const UserModel = mongoose.models.User as mongoose.Model<User> || mongoose.model<User>("User" , userSchema);
 
