@@ -4,9 +4,9 @@ import { addProblemController, getAllProblemController, getProblemWithIdControll
 const problemRouter = Router();
 
 problemRouter.route('/addProblem').post(addProblemController);
-problemRouter.route('/deleteProblem').delete(removeProblemController);
-problemRouter.route('/allProblems').get(getAllProblemController);
-problemRouter.route('/getProblem').get(getProblemWithIdController)
+problemRouter.route('/deleteProblem/:problemId').delete(removeProblemController);
+problemRouter.route('/getAllProblems').get(getAllProblemController);
+problemRouter.route('/getProblem/:problemId').get(getProblemWithIdController)
 
 
 
