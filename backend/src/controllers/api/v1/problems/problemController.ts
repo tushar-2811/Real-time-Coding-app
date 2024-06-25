@@ -21,3 +21,8 @@ export const getAllProblemController = AsyncHandler(async(req: Request , res: Re
 export const getProblemWithIdController = AsyncHandler(async(req: Request , res: Response) => {
 
 })
+
+// update the existing problem | Edit the problem
+export const updateProblemWithIdController = AsyncHandler(async(req: Request , res: Response) => {
+
+})
