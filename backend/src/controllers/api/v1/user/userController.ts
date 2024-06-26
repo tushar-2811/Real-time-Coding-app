@@ -43,3 +43,8 @@ export const signInController = AsyncHandler(async (req: Request , res: Response
           throw new ApiError(400 , "Invalid Credentials" , parsedInput.error)
        }
 })
+
+
+export const updateUserController = AsyncHandler(async(req: Request , res: Response) => {
+  
+})
