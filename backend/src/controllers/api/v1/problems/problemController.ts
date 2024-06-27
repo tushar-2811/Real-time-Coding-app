@@ -26,3 +26,8 @@ export const getProblemWithIdController = AsyncHandler(async(req: Request , res:
 export const updateProblemWithIdController = AsyncHandler(async(req: Request , res: Response) => {
 
 })
+
+// submit a problem
+export const submitProblemController = AsyncHandler(async(req: Request , res: Response) => {
+    
+})

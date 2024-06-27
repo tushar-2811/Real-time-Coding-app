@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addProblemController, getAllProblemController, getProblemWithIdController, removeProblemController, updateProblemWithIdController } from "../../../../controllers/api/v1/problems/problemController";
+import { addProblemController, getAllProblemController, getProblemWithIdController, removeProblemController, submitProblemController, updateProblemWithIdController } from "../../../../controllers/api/v1/problems/problemController";
 
 const problemRouter = Router();
 
@@ -17,6 +17,9 @@ problemRouter.route('/getProblem/:problemId').get(getProblemWithIdController);
 
 // Update existing problem by Id
 problemRouter.route('/updateProblem/:problemId').put(updateProblemWithIdController);
+
+// submit a problem
+problemRouter.route('/submitProblem').post(submitProblemController);
 
 
 
