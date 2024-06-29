@@ -44,7 +44,17 @@ export const signInController = AsyncHandler(async (req: Request , res: Response
        }
 })
 
-
+// update user
 export const updateUserController = AsyncHandler(async(req: Request , res: Response) => {
+     
+})
+
+// delete user
+export const deleteUserController = AsyncHandler(async(req: Request , res: Response) => {
+
+})
+
+// sign-out controller
+export const signOutController = AsyncHandler(async(req: Request, res: Response) => {
   
 })
