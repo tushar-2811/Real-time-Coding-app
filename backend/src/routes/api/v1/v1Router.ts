@@ -10,7 +10,7 @@ v1Router.use('/problem' , problemRouter);
 v1Router.route('/test').get((req , res) => {
     return res.json({
         ok : true,
-        msg : "working fine"
+        msg : "API working fine"
     })
 })
 
