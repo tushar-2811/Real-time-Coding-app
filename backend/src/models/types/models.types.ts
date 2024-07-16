@@ -27,7 +27,6 @@ export interface User extends Document{
     refreshToken : string;
     questionsSolved :  Question[];
     favourites : Question[];
-    walletConfigured : boolean;
 }
 
 
