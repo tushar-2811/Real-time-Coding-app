@@ -37,10 +37,6 @@ const userSchema:Schema<User> = new Schema({
     },
     questionsSolved :  [questionSchema],
     favourites : [questionSchema],
-    walletConfigured : {
-        type : Boolean,
-        default : false
-    },
     refreshToken : {
         type : String
     }
