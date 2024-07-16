@@ -5,7 +5,6 @@ import { ApiError } from "../../../../utils/ApiError";
 import { AsyncHandler } from "../../../../utils/asyncHandler";
 import { Request , Response } from "express";
 
-
 // sign-up controller
 export const signUpController = AsyncHandler(async (req: Request , res: Response) => {
       const {userName , email , password } = req.body;
@@ -27,7 +26,10 @@ export const signUpController = AsyncHandler(async (req: Request , res: Response
         throw new ApiError(401 , "User already exist with these credentials");
       }
 
-      // If No user exists with 
+      // If No user exists with these credentials
+      const newUser = await UserModel.create({
+        userName , email , password , 
+      })
 
 
 })
@@ -56,5 +58,5 @@ export const deleteUserController = AsyncHandler(async(req: Request , res: Respo
 
 // sign-out controller
 export const signOutController = AsyncHandler(async(req: Request, res: Response) => {
-  
+     
 })
