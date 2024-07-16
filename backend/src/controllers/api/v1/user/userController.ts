@@ -2,7 +2,7 @@ import UserModel from "../../../../models/user.model";
 import { signInSchema } from "../../../../schemas/signInSchema";
 import { signUpSchema } from "../../../../schemas/signUpSchema";
 import { ApiError } from "../../../../utils/ApiError";
-import { AsyncHandler } from "../../../../utils/AsyncHandler";
+import { AsyncHandler } from "../../../../utils/asyncHandler";
 import { Request , Response } from "express";
 
 
